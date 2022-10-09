@@ -1,0 +1,358 @@
+.container {
+    position: relative;
+}
+
+.navbar {
+    position: relative;
+    z-index: 100;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid var(--grayish-blue);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* - - - - LEFT - - - - */
+
+/* Box */
+.navbar__leftBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2rem;
+}
+/* Menu */
+.navbar__containerMenu {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: none;
+}
+.navbar__containerMenu img {
+    width: 100%;
+    height: 100%;
+}
+/* Logo */
+.navbar__containerLogo {
+    width: min-content;
+    height: min-content;
+
+    display: flex;
+    align-items: center;
+}
+
+/* ul */
+.navbar__leftBox ul {
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+    min-width: 450px;
+}
+.navbar__leftBox ul li {
+    list-style-type: none;
+}
+.navbar__leftBox ul li a {
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+    border-bottom: 4px solid transparent;
+    transition-duration: .01s;
+}
+.navbar__leftBox ul li a:hover {
+    padding-bottom: calc(50px - (.9rem / 2) - 4px);
+    border-bottom: 4px solid var(--orange);
+}
+
+
+/* - - - - RIGHT - - - - */
+
+/* Box */
+.navbar__rightBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2.5rem;
+
+    max-width: 120px;
+}
+/* Cart */
+.navbar__containerCart {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.navbar__containerCart img{
+    width: 100%;
+    height: 100%;
+}
+/* Avatar */
+.navbar__containerAvatar {
+    height: 45px;
+    width: min-content;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition-duration: .25s;
+    cursor: pointer;
+}
+.navbar__containerAvatar:hover {
+    border: 2px solid var(--orange);
+}
+.navbar__containerAvatar img {
+    height: 100%;
+    width: auto;
+}
+
+
+/* Contenedor del boton y la lista de articulos */
+.navbar__containerButtonItems {
+    position: relative;
+}
+
+/* Contador  de items*/
+.navbar__containerButtonItems span {
+    /* height: min-content; */
+    position: absolute;
+    top: -10px;
+    right: -12px;
+
+    padding: .8px 10px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 45%;
+    font-size: .7rem;
+}
+
+/* Contenedor de la tarjeta de cart */
+.navbar__cartContainer {
+    position: absolute;
+    z-index: 200;
+    background-color: var(--white);
+    top: 80px;
+    /* bottom: 80px; */
+    right: -50px;
+    width: 320px;
+    min-height: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+.navbar__cartContainerHide {
+    display: none;
+}
+
+/* Span container */
+.navbar__cartContainerSpan {
+    padding: 20px;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+/* Span */
+.navbar__cartSpan {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Contenedor de articulos */
+.navbar__cartContainerItems {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Span en caso de que no haya articulos */
+.navbar__cartContainerItems > span {
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--dark-grayish-blue);
+}
+
+
+/* Items y boton */
+/* .navbar__itemsGeneral {
+
+} */
+
+/* Item */
+.navbar__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .8rem;
+    min-height: 50px;
+    padding: 5px 0;
+}
+
+/* Imagen del articulo */
+.navbar__item > img{
+    height: 50px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Textos del articulo */
+.navbar__itemDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    row-gap: 5px;
+}
+.navbar__itemDescription h4 {
+    font-size: .8rem;
+    font-weight: 400;
+}
+.navbar__itemDescription h5 {
+    font-size: .8rem;
+    font-weight: 400;
+}
+.navbar__itemDescription h5 span {
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+/* Imagen de la basura para borrar */
+.navbar__item > button {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+.navbar__item > button > img {
+    object-fit: contain;
+    width: 15px;
+}
+
+/* Boton cart */
+.navbar__itemsGeneral > button {
+    margin-top: 20px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: .8rem;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 950px) {
+    .navbar {
+        border: none;
+        height: 70px;
+        padding: 0 30px;
+    }
+    .navbar__leftBox {
+        z-index: 500;
+    }
+    .navbar__leftBox ul {    
+        min-width: 300px;
+    }
+
+    .navbar__rightBox {
+        column-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .navbar__cartContainer {
+        top: 85px;
+        right: 20px;
+        left: 20px;
+        width: auto;
+        min-height: 200px;
+    }
+    .navbar__leftBox {
+        position: relative;
+        width: 100%;
+    }
+    .navbar__leftBox ul {
+        min-width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 2rem;
+
+        padding: 40px;
+
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: -100vw;
+        transition-duration: .3s;
+        height: 100vh;
+        width: 65%;
+
+        background-color: var(--white);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    .navbar__leftBox ul li a:hover {
+        border: none;
+        padding: 0;
+    }
+    .navbar__leftBox ul > button {
+        background-color: transparent;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .navbar__showMenu {
+        left: 0px !important;
+    }
+
+    /* Items y boton */
+    .navbar__itemsGeneral {
+        width: 80%;
+    }
+    .navbar__item {
+        justify-content: space-between;
+        column-gap: .8rem;
+        min-height: 50px;
+        padding: 5px 0;
+        width: 100%;
+    }
+    .navbar__leftBox {
+        column-gap: 1rem;
+    }
+    .navbar__containerMenu {
+        display: inline-flex;
+    }
+
+    .navbar__rightBox {
+        column-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    /* Items y boton */
+    .navbar__itemsGeneral {
+        width: 100%;
+    }
+}
